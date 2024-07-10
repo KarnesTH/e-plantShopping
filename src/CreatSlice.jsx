@@ -7,12 +7,12 @@ export const CreatSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const { name, img, cost } = action.payload;
+      const { name, image, cost } = action.payload;
       const existingItem = state.items.find((item) => item.name === name);
       if (existingItem) {
         existingItem.quantity++;
       } else {
-        state.items.push({ name, img, cost, quantity: 1 });
+        state.items.push({ name, image, cost, quantity: 1 });
       }
     },
     removeItem: (state, action) => {
